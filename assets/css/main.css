@@ -2705,11 +2705,11 @@ input, select, textarea {
 		padding: 2em 4em 4em 4em;
 		width: calc(100% - 35%);
 		/*background-color: #1f1815;*/
-		/*background-attachment: scroll,								scroll;*/
+		background-attachment: scroll,								scroll;
 		/*background-image: url("images/overlay.png"), url("../../images/main-bg.jpg");*/
-		/*background-position: top left,							top left;*/
-		/*background-repeat: repeat,								no-repeat;*/
-		/*background-size: auto,								150%;*/
+		background-position: top left,							top left;
+		background-repeat: repeat,								no-repeat;
+		background-size: auto,								150%;
 	}
 
 		#main > section {
@@ -3247,7 +3247,9 @@ input, select, textarea {
 
 /* Subheading emphasis */
 
-/*	.bold {*/
-/*		color: #49bf9d;*/
-/*		!*margin: 1em 0 1em 0;*!*/
-/*	}*/
+	.bio {
+		color: #49bf9d;
+		/*margin: 2em 0 0 0;*/
+		padding: 1.5em 0 0 0;
+		/*margin: 1em 0 1em 0;*/
+	}
