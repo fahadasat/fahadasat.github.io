@@ -133,7 +133,7 @@ input, select, textarea {
 		color: #787878;
 		font-weight: 400;
 		line-height: 1em;
-		margin: 0 0 1em 0;
+		/*margin: 0 0 1em 0;*/
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -144,20 +144,25 @@ input, select, textarea {
 	h1 {
 		font-size: 2em;
 		line-height: 1.5em;
+		margin: 0 0 1em 0;
 	}
 
 	h2 {
 		font-size: 1.5em;
 		line-height: 1.5em;
+		margin: 0 0 1em 0;
 	}
 
 	h3 {
+		border-bottom: solid 2px #efefef;
+		color: #49bf9d;
 		font-size: 1.25em;
 		line-height: 1.5em;
+		margin: 1em 0 1em 0;
 	}
 
 	h4 {
-		font-size: 1.1em;
+		font-size: 1.0em;
 		line-height: 1.5em;
 	}
 
@@ -1777,13 +1782,13 @@ input, select, textarea {
 		line-height: 1.5em;
 	}
 
-	header h4 + p,
-	header h5 + p,
-	header h6 + p {
-		font-size: 0.9em;
-		margin-top: -0.6em;
-		line-height: 1.5em;
-	}
+	/*header h4 + p,*/
+	/*header h5 + p,*/
+	/*header h6 + p {*/
+	/*	font-size: 0.9em;*/
+	/*	margin-top: -0.6em;*/
+	/*	line-height: 1.5em;*/
+	/*}*/
 
 	header.major h2 {
 		font-size: 2em;
@@ -2575,8 +2580,8 @@ input, select, textarea {
 		}
 
 		.work-item h3 {
-			font-size: 1em;
-			margin: 0 0 0.5em 0;
+			font-size: 1.1em;
+			/*margin: 0 0 0.5em 0;*/
 		}
 
 		.work-item p {
@@ -2697,14 +2702,20 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 2em 4em 4em 4em;
 		width: calc(100% - 35%);
+		/*background-color: #1f1815;*/
+		/*background-attachment: scroll,								scroll;*/
+		/*background-image: url("images/overlay.png"), url("../../images/main-bg.jpg");*/
+		/*background-position: top left,							top left;*/
+		/*background-repeat: repeat,								no-repeat;*/
+		/*background-size: auto,								150%;*/
 	}
 
 		#main > section {
 			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
+			margin: 1em 0 0 0;
+			padding: 1em 0 0 0;
 		}
 
 			#main > section:first-child {
@@ -3233,3 +3244,10 @@ input, select, textarea {
 			}
 
 	}
+
+/* Subheading emphasis */
+
+/*	.bold {*/
+/*		color: #49bf9d;*/
+/*		!*margin: 1em 0 1em 0;*!*/
+/*	}*/
