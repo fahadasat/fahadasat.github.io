@@ -2192,6 +2192,7 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		list-style: none;
 	}
 
 		ul.icons li {
@@ -2237,6 +2238,19 @@ input, select, textarea {
 	/*			top: 0;*/
 	/*			width: 1em;*/
 	/*		}*/
+
+/* Resources */
+/*	li{*/
+/*		!*display: -moz-flex;*!*/
+/*		!*display: -webkit-flex;*!*/
+/*		!*display: -ms-flex;*!*/
+/*		!*display: flex;*!*/
+/*		!*cursor: all-scroll;*!*/
+/*		list-style: none;*/
+/*		!*padding-right: 1em;*!*/
+/*		!*display: inline;*!*/
+
+/*	}*/
 
 /* Actions */
 
