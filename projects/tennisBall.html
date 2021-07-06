@@ -35,12 +35,83 @@
     <!-- One -->
     <section id="one">
         <h3> Project Summary </h3>
-
+        <h4>
+            The Autonomous Vehicle Tennis Ball Collector (AVTBC) was a semester impractical 
+            but fun group project during the Covid-19 lockdown involving Kyle Keislar, 
+            Nolan Mirras, Igor Vdovchenko, and yours truly. The goal of this project was to 
+            collect and return tennis balls from a standard tennis court. The project utilizes 
+            a variety of sensory and image processing technologies including ultranosin and 
+            smart vision sensors. The AVTBC consists of a basket and robotic arm mounted to 
+            a small electric car for mobile ball collection and storage.
+            <br /> <br />
+            The project report can be downloaded <a href="../files/AVTBC.pdf" download="AVTBC.pdf" target="_blank"> <u> here </u></a>.
+        </h4>
         <h3> Tools, libraries, frameworks, etc. </h3>
-
-        <h3> What was learned </h3>
-
+        <h4>
+            C++, Arduino Uno, Pixy2 Smart Vision Sensor, Lewan Soul xArm
+        </h4>
         <h3> Detailed Project Description </h3>
+        <h4>
+            This project is summed up into 5 high level systems:
+            <ul class = "bit-sections">
+                <li> Drivetrain System </li>
+                <li> Ball Detection System </li>
+                <li> Ball Acquisition System </li>
+                <li> Microcontroller Navigation & Control System </li>
+                <li> Power System </li>
+            </ul>
+            
+            <br /> <u> Drivetrain System: </u> <br /> <br />
+
+            This system uses the osoyoo robotic car with modified battery and motors. 
+            The design decisions that came into play into choosing this car included power, 
+            weight, and mobility. This arduino interfacing model allowed for easier chassis 
+            modification and high torque performance for the increased weight the basket 
+            and tennis balls would bring. <br /> <br />
+
+            <u> Ball Detection System: </u> <br /> <br />
+
+            For this system two main sensors were used. For the long distance sensor network 
+            a mesh of ultrasonic sensors were used as they were cheap, lightweight, and had 
+            a detection radius of greater than 10 inches. For the shorter distances a Pixy2 
+            Smart Vision Sensor was able to do the trick. This lightweight and compact smart 
+            sensor is capable of tracking multiple objects, has integrated arduino capability, 
+            and specializes in color detection. <br /> <br />
+
+            <u> Ball Acquisition System: </u> <br /> <br />
+
+            This system includes an acquisition and storage device. A robotic arm called Lewan 
+            Soul xArm, dubbed Armen, was used to pick up the tennis balls while a simple, cheap, 
+            and lightweight basket was screwed for the ball collection. The biggest weight for 
+            the car would be the robotic arm so the main considerations when picking armen was 
+            size, weight, power, and range of motion. Armen met the requirements and included a 
+            board that supplied the power and data the servos required. Armen utilizes TTL on 
+            the TX and RX pins and a proprietary protocol for communication between the arduino 
+            and arm. <br /> <br />
+
+            <u> Microcontroller Navigation & Control System: </u> <br /> <br />
+
+            The navigation and control system was based on a routine state diagram given below. 
+            When placed on the tennis court the robot will patrol in a straight line. Once the 
+            object is detected the pixy camera will confirm if it is a tennis ball. Once in 
+            position the arm will go through it’s retrieval subroutine and place it on the 
+            basket. The car will then return to the previous patrol point and resume patrol. 
+            <br /> <br />
+
+            <figure>
+                <img src="../images/AVTBC/state-diagram.png" alt="state diagram" >
+            </figure>
+
+            <br /> <u> Power System: </u> <br /> <br />
+
+            The power system must be able to power the car’s motors, Armen’s servos, and 
+            arduino with the sensors. They will also need to have the capacity to continuously 
+            operate for one court sweep. Using two LiPo high discharge 3.8V rechargeable batteries 
+            the costs were able to stay inexpensive. However, the operational time will put a 
+            significant drain on the 2.2 A/hr battery pack. Another battery pack is being 
+            considered as well as adding mosfet switches with the logic control coming from the 
+            arduino.  <br /> <br />
+        </h4>
 
     </section>
 
