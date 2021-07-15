@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
+     content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
+  
   <body class="is-preload">
     <!-- Header -->
     <header id="header">
@@ -28,6 +29,26 @@
           <li><a href="../about.html" class="button">About Me</a></li>
         </ul>
       </div>
+      <div class="inner">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://github.com/fahadasat/jsBot"
+              target="_blank"
+             class="icon brands fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://youtu.be/XosFpgHKu2o"
+              target="_blank"
+             class="icon brands fa-youtube"
+              ><span class="label">YouTube</span></a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- Main -->
@@ -45,55 +66,239 @@
         <h3>Tools, libraries, frameworks, etc.</h3>
         <h4>JavaScript, Node.Js, MongoDB, Mongoose, Discord.js</h4>
         <h3>Detailed Project Description</h3>
-      </section>
-      <!-- <div class="commandMenu">
-        <button onclick="commandMenu()">All</button>
-        <button onclick="commandMenu()">Info</button>
-        <button onclick="commandMenu()">Fun</button>
-        <button onclick="commandMenu()">Misc</button>
-        <button onclick="commandMenu()">Utility</button>
-    </div> -->
 
-      <!-- <div id="myDIV">
-    This is my DIV element.
-    </div> -->
-      <div class="container">
-        <div class="container commandMenu">
-          Commands
+        <div class="commandMenu">
+          commands
           <div class="btn-group">
-            <button type="button" class="btn btn-default">All</button>
-            <button>Info</button>
-            <button>Fun</button>
-            <button>Misc</button>
-            <button>Utility</button>
+            <button onclick='showInfoCommands("block"), showFunCommands("block"), showMiscCommands("block"), showUtilityCommands("block")'>All</button>
+            <button onclick='showInfoCommands("block"), showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("none")'>Info</button>
+            <button onclick='showInfoCommands("none"), showFunCommands("block"), showMiscCommands("none"), showUtilityCommands("none")'>Fun</button>
+            <button onclick='showInfoCommands("none"), showFunCommands("none"), showMiscCommands("block"), showUtilityCommands("none")'>Misc</button>
+            <button onclick='showInfoCommands("none"), showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("block")'>Utility</button>
           </div>
         </div>
-      </div>
+
+        <div class="commands info_commands">
+          <span class="show">
+            <span> &#8680 help </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+
+        <div class="commands info_commands">
+          <span class="show">
+            <span> &#8680 maps </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands info_commands">
+          <span class="show">
+            <span> &#8680 ping </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands info_commands">
+          <span class="show">
+            <span> &#8680 server-info </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands info_commands">
+          <span class="show">
+            <span> &#8680 user-info </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 akinator </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands" >
+          <span class="show">
+            <span> &#8680 coinflip </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands" >
+          <span class="show">
+            <span> &#8680 connect-four </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 dice </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 joke </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 pokemon </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 rateme </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands fun_commands">
+          <span class="show">
+            <span> &#8680 s </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 imdb </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 lyrics </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 matty </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 movies </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 onceamatador </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands" >
+          <span class="show">
+            <span> &#8680 reddit </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands">
+          <span class="show">
+            <span> &#8680 say </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands misc_commands" >
+          <span class="show">
+            <span> &#8680 suggestions </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands" >
+          <span class="show">
+            <span> &#8680 ban </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands">
+          <span class="show">
+            <span> &#8680 kick </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands">
+          <span class="show">
+            <span> &#8680 prune </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands">
+          <span class="show">
+            <span> &#8680 reload </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands" >
+          <span class="show">
+            <span> &#8680 reload-bot </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+        <div class="commands utility_commands">
+          <span class="show">
+            <span> &#8680 updaterole </span>
+          </span>
+          <div class="info">
+            <i> Details shown here </i>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="inner">
-        <ul class="icons">
-          <li>
-            <a
-              href="https://github.com/fahadasat/jsBot"
-              target="_blank"
-              class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://youtu.be/XosFpgHKu2o"
-              target="_blank"
-              class="icon brands fa-youtube"
-              ><span class="label">YouTube</span></a
-            >
-          </li>
-        </ul>
-      </div>
-    </footer>
+    
 
     <!-- Scripts -->
     <script src="../assets/js/jquery.min.js"></script>

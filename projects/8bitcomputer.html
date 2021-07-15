@@ -1,137 +1,148 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>8 Bit Computer</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
     <link rel="stylesheet" href="../assets/css/main.css" />
-</head>
-<body class="is-preload">
-
-<!-- Header -->
-<header id="header">
-    <div class="inner">
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
         <a href="#" class="image avatar"><img src="" alt="" /></a>
-        <h1> 8 Bit Computer </h1>
+        <h1>8 Bit Computer</h1>
 
         <ul class="actions">
-            <li><a href="../index.html" class="button">Home</a></li>
+          <li><a href="../index.html" class="button">Home</a></li>
         </ul>
 
         <ul class="actions">
-            <li><a href="../resume.html" class="button">Resume</a></li>
+          <li><a href="../resume.html" class="button">Resume</a></li>
         </ul>
 
         <ul class="actions">
-            <li><a href="../about.html" class="button">About Me</a></li>
+          <li><a href="../about.html" class="button">About Me</a></li>
         </ul>
+      </div>
+    </header>
 
+    <!-- Main -->
+    <div id="main">
+      <!-- One -->
+      <section id="one">
+        <h3>Project Summary</h3>
+        <h4>
+          During my freshman year at college I stumbled upon the great Ben
+          Eater’s youtube video about programming his 8-bit breadboard computer.
+          At the time of watching this video I didn’t really understand what was
+          happening, but was fascinated by the video. A few years later, I
+          finished my Design of Digital Computers lecture and revisited the
+          video series and this time around I was able to follow the logic.
+          Afterwards, I decided to build my own version of the computer using
+          the RISC architecture that was taught.
+        </h4>
+        <h3>Tools, libraries, frameworks, etc.</h3>
+        <h4>
+          PSpice, Arduino Uno, Wire cutters, Oscilloscope, Function Generator,
+          Multimeter
+        </h4>
+        <h3>Detailed Project Description</h3>
+        <h4>
+          The project can be separated into multiple sections:
+          <ul class="bit-sections">
+            <li>Clock Module</li>
+            <li>Registers</li>
+            <li>Arithmetic Logic Unit</li>
+            <li>Random access memory</li>
+            <li>Program counter</li>
+            <li>Output register</li>
+            <li>Control Logic</li>
+          </ul>
+          <figure>
+            <img src="../images/8bit/computer_design.png" alt="8-Bit Design" />
+            <figcaption>Source: Ben Eater</figcaption>
+          </figure>
+
+          <br />
+          <u> Clock Module: </u> <br />
+          <br />
+
+          The clock was created by programming an ATTiny that I had laying
+          around at the time. While it can be argued that using an ATTiny for a
+          computer clock is a little overkill it was what I had laying around
+          and being the thrifty college student that I was, decided to use it.
+          Using a potentiometer the clock was able to adjust the speed from 1Hz
+          to a few hundred. A button was added to be able to advance the clock
+          through one clock cycle for easy debugging. <br />
+          <br />
+
+          <u> Registers: </u> <br />
+          <br />
+
+          The registers used were simple 8-bit registers that used a bus
+          transceiver to connect to the bus if needed. <br />
+          <br />
+
+          <u>Arithmetic Logic Unit: </u> <br />
+          <br />
+
+          The ALU design that was created allows for three operations to be
+          performed. Opcode 001 performs the AND operation between the
+          accumulator (ACC) register and memory buffer register (MBR). Opcode
+          010 performs the ADD operation between the two registers and opcode
+          value 100 performs the SUB operation. <br />
+          <br />
+
+          <u> Random Access Memory: </u> <br />
+          <br />
+
+          The RAM used only has 4-bit addresses which means the computer only
+          has access to 16 bytes. The data stored in the RAM is the instruction
+          set for each opcode. Since we only have three instructions, 16 bytes
+          is more than sufficient. <br />
+          <br />
+
+          <u> Program Counter: </u> <br />
+          <br />
+
+          The program counter is a simple binary counter that shows which
+          instruction the computer is currently executing. The program counter
+          will be connected to the RAM which takes the data and sends it to the
+          control unit. <br />
+          <br />
+
+          <u> Output Register: </u> <br />
+          <br />
+
+          The output register is just the accumulator value being sent to a
+          display. This will convert the 8-bit binary data into a more readable
+          format. <br />
+          <br />
+
+          <u> Control Logic: </u> <br />
+          <br />
+
+          The control logic essentially tells the computer what to do on each
+          opcode. During the AND operation clock cycle 1 will have the MBR
+          receive the data from memory and during cycle 2 the ACC will receive
+          the value from the bitwise AND between the MBR AND ACC. A similar
+          procedure is done for the other two instructions.
+          <br />
+          <br />
+        </h4>
+      </section>
     </div>
-</header>
 
-<!-- Main -->
-<div id="main">
-
-    <!-- One -->
-    <section id="one">
-        <h3> Project Summary </h3>
-        <h4>
-            During my freshman year at college I stumbled upon the great Ben Eater’s youtube video 
-            about programming his 8-bit breadboard computer. At the time of watching this video I 
-            didn’t really understand what was happening, but was fascinated by the video. 
-            A few years later, I finished my Design of Digital Computers lecture and revisited the 
-            video series and this time around I was able to follow the logic. Afterwards, I decided 
-            to build my own version of the computer using the RISC architecture that was taught.
-        </h4>
-        <h3> Tools, libraries, frameworks, etc. </h3>
-        <h4>
-             PSpice, Arduino Uno, Wire cutters, Oscilloscope, Function Generator, Multimeter
-        </h4>
-        <h3> Detailed Project Description </h3>
-        <h4>
-            The project can be separated into multiple sections:
-            <ul class = "bit-sections">
-                <li> Clock Module </li>
-                <li> Registers </li>
-                <li> Arithmetic Logic Unit </li>
-                <li> Random access memory </li>
-                <li> Program counter </li>
-                <li> Output register </li>
-                <li> Control Logic </li>
-            </ul>
-            <figure>
-                <img src="../images/8bit/computer_design.png" alt="8-Bit Design" >
-                <figcaption>Source: Ben Eater</figcaption>
-            </figure>
-            
-            <br /> <u> Clock Module: </u> <br /> <br />
-
-            The clock was created by programming an ATTiny that I had laying around at the time. 
-            While it can be argued that using an ATTiny for a computer clock is a little overkill 
-            it was what I had laying around and being the thrifty college student that I was, 
-            decided to use it. Using a potentiometer the clock was able to adjust the speed from 
-            1Hz to a few hundred. A button was added to be able to advance the clock through one 
-            clock cycle for easy debugging. <br /> <br />
-
-            <u> Registers: </u> <br /> <br />
-
-            The registers used were simple 8-bit registers that used a bus transceiver to connect 
-            to the bus if needed. <br /> <br />
-
-            <u>Arithmetic Logic Unit: </u> <br /> <br />
-
-            The ALU design that was created allows for three operations to be performed. Opcode 
-            001 performs the AND operation between the accumulator (ACC) register and memory 
-            buffer register (MBR). Opcode 010 performs the ADD operation between the two 
-            registers and opcode value 100 performs the SUB operation.  <br /> <br />
-
-            <u> Random Access Memory: </u> <br /> <br />
-
-            The RAM used only has 4-bit addresses which means the computer only has access to 
-            16 bytes. The data stored in the RAM is the instruction set for each opcode. 
-            Since we only have three instructions, 16 bytes is more than sufficient. <br /> <br />
-
-            <u> Program Counter: </u> <br /> <br />
-
-            The program counter is a simple binary counter that shows which instruction the 
-            computer is currently executing. The program counter will be connected to the RAM 
-            which takes the data and sends it to the control unit. <br /> <br />
-
-            <u> Output Register: </u> <br /> <br />
-
-            The output register is just the accumulator value being sent to a display. This 
-            will convert the 8-bit binary data into a more readable format. <br /> <br />
-
-            <u> Control Logic: </u> <br /> <br />
-
-            The control logic essentially tells the computer what to do on each opcode. 
-            During the AND operation clock cycle 1 will have the MBR receive the data from 
-            memory and during cycle 2 the ACC will receive the value from the bitwise AND 
-            between the MBR AND ACC. A similar procedure is done for the other two instructions. 
-            <br /> <br /> 
-
-        </h4>
-
-    </section>
-
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <ul class="icons">
-
-        </ul>
-    </div>
-</footer>
-
-<!-- Scripts -->
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.poptrox.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
-
-</body>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.poptrox.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>
