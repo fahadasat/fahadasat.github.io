@@ -1,15 +1,33 @@
 $(".commands").click(function () {
   let commandName = getCommandName($(this.children[0])[0].innerHTML);
+  // console.log($(this.children[0])[0].innerHTML);
   $(this.children[0]).next().toggle();
   let visible = $(this.children[0]).next().is(":visible");
   if (visible) {
-    $("span", this.children[0]).html(" &#8681 " + commandName);
+    $("div", this.children[0]).html(` &#8681 ${commandName} </span> `);
   } else {
-    $("span", this.children[0]).html(" &#8680 " + commandName);
+    $("div", this.children[0]).html(` &#8680 ${commandName}</span> `);
   }
 });
 
+function showAll() {
+  showInfoCommands("block");
+  showFunCommands("block");
+  showMiscCommands("block");
+  showUtilityCommands("block");
+  document.getElementById("all").style.backgroundColor = "#49bf9d";
+  document.getElementById("info").style.backgroundColor = "#2c2c34";
+  document.getElementById("fun").style.backgroundColor = "#2c2c34";
+  document.getElementById("misc").style.backgroundColor = "#2c2c34";
+  document.getElementById("utility").style.backgroundColor = "#2c2c34";
+}
+
 function showInfoCommands(display) {
+  document.getElementById("all").style.backgroundColor = "#2c2c34";
+  document.getElementById("info").style.backgroundColor = "#49bf9d";
+  document.getElementById("fun").style.backgroundColor = "#2c2c34";
+  document.getElementById("misc").style.backgroundColor = "#2c2c34";
+  document.getElementById("utility").style.backgroundColor = "#2c2c34";
   for (
     let i = 0;
     i < document.getElementsByClassName("info_commands").length;
@@ -20,6 +38,11 @@ function showInfoCommands(display) {
 }
 
 function showFunCommands(display) {
+  document.getElementById("all").style.backgroundColor = "#2c2c34";
+  document.getElementById("info").style.backgroundColor = "#2c2c34";
+  document.getElementById("fun").style.backgroundColor = "#49bf9d";
+  document.getElementById("misc").style.backgroundColor = "#2c2c34";
+  document.getElementById("utility").style.backgroundColor = "#2c2c34";
   for (
     let i = 0;
     i < document.getElementsByClassName("fun_commands").length;
@@ -30,6 +53,11 @@ function showFunCommands(display) {
 }
 
 function showMiscCommands(display) {
+  document.getElementById("all").style.backgroundColor = "#2c2c34";
+  document.getElementById("info").style.backgroundColor = "#2c2c34";
+  document.getElementById("fun").style.backgroundColor = "#2c2c34";
+  document.getElementById("misc").style.backgroundColor = "#49bf9d";
+  document.getElementById("utility").style.backgroundColor = "#2c2c34";
   for (
     let i = 0;
     i < document.getElementsByClassName("misc_commands").length;
@@ -40,6 +68,11 @@ function showMiscCommands(display) {
 }
 
 function showUtilityCommands(display) {
+  document.getElementById("all").style.backgroundColor = "#2c2c34";
+  document.getElementById("info").style.backgroundColor = "#2c2c34";
+  document.getElementById("fun").style.backgroundColor = "#2c2c34";
+  document.getElementById("misc").style.backgroundColor = "#2c2c34";
+  document.getElementById("utility").style.backgroundColor = "#49bf9d";
   for (
     let i = 0;
     i < document.getElementsByClassName("utility_commands").length;
@@ -51,7 +84,15 @@ function showUtilityCommands(display) {
 }
 
 function getCommandName(text) {
-  return text.trim().split(" ")[2];
+  // console.log(text);
+  let commandName = "";
+  let temp = text.trim().split(" ");
+
+  for (let i = 2; i < temp.length; i++) {
+    if (temp[i] === "div") break;
+    commandName += ` ${temp[i]}`;
+  }
+  return commandName;
 }
 
 (function ($) {

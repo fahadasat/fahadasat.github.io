@@ -3,60 +3,46 @@
   <head>
     <title>CSUN Discord Bot</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-     content="width=device-width, initial-scale=1, user-scalable=no"
-    />
+
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
   
-  <body class="is-preload">
-    <!-- Header -->
+  <body>
     <header id="header">
-      <div class="inner">
-        <a href="#" class="image avatar"><img src="" alt="" /></a>
-        <h1>CSUN Discord Textbot</h1>
+      <h1>CSUN Discord Textbot</h1>
 
-        <ul class="actions">
-          <li><a href="../index.html" class="button">Home</a></li>
-        </ul>
+      <a href="../index.html" class="button">Home</a>
+      <a href="../resume.html" class="button">Resume</a>
+      <a href="../about.html" class="button">About Me</a>
 
-        <ul class="actions">
-          <li><a href="../resume.html" class="button">Resume</a></li>
-        </ul>
-
-        <ul class="actions">
-          <li><a href="../about.html" class="button">About Me</a></li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a
-              href="https://github.com/fahadasat/jsBot"
-              target="_blank"
-             class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://youtu.be/XosFpgHKu2o"
-              target="_blank"
-             class="icon brands fa-youtube"
-              ><span class="label">YouTube</span></a
-            >
-          </li>
-        </ul>
-      </div>
+      <ul class="icons">
+        <li>
+          <a
+            href="https://github.com/fahadasat/jsBot"
+            target="_blank"
+            class="icon brands fa-github"
+          >
+            <span class="label">Github</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://youtu.be/XosFpgHKu2o"
+            target="_blank"
+            class="icon brands fa-youtube"
+          >
+            <span class="label">YouTube</span>
+          </a>
+        </li>
+      </ul>
     </header>
 
-    <!-- Main -->
     <div id="main">
-      <!-- One -->
       <section id="one">
         <h3>Project Summary</h3>
         <h4>
-          Currently I am moderating my school’s (CSUN) Discord server which
-          hosts 3000 users. I have used the Discord API to develop a bot
+          Currently being used in my school’s (CSUN) Discord server which
+          hosts 3000 users. I used the Discord API to develop a text-bot
           programmed in JavaScript to play games and interact with users like
           playing in a simulated stock market, connect four, Pokémon, Akinator,
           find the IMBD results of a movie, find the lyrics to a song, etc.
@@ -65,247 +51,692 @@
         <h4>JavaScript, Node.Js, MongoDB, Mongoose, Discord.js</h4>
         <h3>Detailed Project Description</h3>
 
+        <h4>
+          Currently the bot is on it's 3rd iteration. The first two iterations were 
+          programmed in Python. After reviewing the Discord.js library and its
+          capabilities I decided to transition to JavaScript. <br> <br>
+          The bot uses MongoDB to store user details, server details, and movies for 
+          movie night. Below there are the commands with details on what they are.
+          Some noteable commands would be the Akinator command to play an Akinator
+          game with the bot, the connect-4 command to play a game with any other user,
+          and finally the Pokemon command. <br> <br>
+          The Pokemon command while not currently finished allows each user to 
+          catch various pokemon that spawns, battle pokemon to train your pokemon,
+          and battle other users to glory and money. Currently, only the first
+          generation of Pokemon and types are implemented.
+
+        </h4>
+
         <div class="commandMenu">
-          commands
           <div class="btn-group">
-            <button onclick='showInfoCommands("block"), showFunCommands("block"), showMiscCommands("block"), showUtilityCommands("block")'>All</button>
-            <button onclick='showInfoCommands("block"), showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("none")'>Info</button>
-            <button onclick='showInfoCommands("none"), showFunCommands("block"), showMiscCommands("none"), showUtilityCommands("none")'>Fun</button>
-            <button onclick='showInfoCommands("none"), showFunCommands("none"), showMiscCommands("block"), showUtilityCommands("none")'>Misc</button>
-            <button onclick='showInfoCommands("none"), showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("block")'>Utility</button>
+            <button id = "all" onclick='showAll()'>All</button>
+            <button id = "info" onclick='showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("none"), showInfoCommands("block")'>Info</button>
+            <button id = "fun" onclick='showInfoCommands("none"), showMiscCommands("none"), showUtilityCommands("none"), showFunCommands("block")'>Fun</button>
+            <button id = "misc" onclick='showInfoCommands("none"), showFunCommands("none"), showUtilityCommands("none"), showMiscCommands("block")'>Misc</button>
+            <button id = "utility" onclick='showInfoCommands("none"), showFunCommands("none"), showMiscCommands("none"), showUtilityCommands("block")'>Utility</button>
+          </div>
+        </div>
+        <div class="commands info_commands">
+          <div class="show">
+            <div> &#8680 ~help </div>
+          </div>
+          <div class="info">
+            <i> Displays all commands for this bot </i>
+            <p> 
+              <span class="highlight">
+                ~help [command name]
+              </span>
+              - Use a command name as an 
+              argument to display details for a command
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              10 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~botinfo, ~info, ~commands
+            </p>
           </div>
         </div>
 
         <div class="commands info_commands">
-          <span class="show">
-            <span> &#8680 help </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~maps </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays all subcommands for this command </i>
+            <p> 
+              <span class="highlight">
+                ~maps [desired map]
+              </span>
+              - Use a map name as an 
+              argument to display that map
+            </p>
+            <p> 
+              <span class="highlight">
+                subcommands:
+              </span>
+              campus, housing, shuttle, water, lactation
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~m, ~map
+            </p>
           </div>
         </div>
-
         <div class="commands info_commands">
-          <span class="show">
-            <span> &#8680 maps </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~ping </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Use to check if bot is active </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              1 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~test
+            </p>
           </div>
         </div>
         <div class="commands info_commands">
-          <span class="show">
-            <span> &#8680 ping </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~server-info </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays the info for the server </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              30 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~serverinfo, server-details, server-details, serverdtls
+            </p>
           </div>
         </div>
         <div class="commands info_commands">
-          <span class="show">
-            <span> &#8680 server-info </span>
-          </span>
-          <div class="info">
-            <i> Details shown here </i>
+          <div class="show">
+            <div> &#8680 ~user-info [@user] </div>
           </div>
-        </div>
-        <div class="commands info_commands">
-          <span class="show">
-            <span> &#8680 user-info </span>
-          </span>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays the info for the user </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~userinfo, ~user-details, ~userdetails, ~userdtls, usrdtls
+            </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 akinator </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~akinator </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> 
+              Start an Akinator game where the bot
+              will guess what your thinking.
+            </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              2 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~ak
+            </p>
           </div>
         </div>
         <div class="commands fun_commands" >
-          <span class="show">
-            <span> &#8680 coinflip </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~coinflip </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Flips a coin for you </i>
+            <p> 
+              <span class="highlight">
+                ~coinflip [number]
+              </span>
+              - Use a number to tell the bot how many coins to flip
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~coin-flip, ~flip-coin, ~flip
+            </p>
           </div>
         </div>
         <div class="commands fun_commands" >
-          <span class="show">
-            <span> &#8680 connect-four </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~connect-four </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays all subcommands for this command </i>
+            <p> 
+              <span class="highlight">
+                ~connect-four [challenge] [@player]
+              </span>
+              - Use a subcommand to challenge, play, or resign
+            </p>
+            <p> 
+              <span class="highlight">
+                subcommands:
+              </span>
+              challenge, place, resign, draw
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              2 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~c4, ~connect, ~cfour, ~connect
+            </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 dice </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~dice </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Rolls a dice for you </i>
+            <p> 
+              <span class="highlight">
+                ~dice [number]
+              </span>
+              - Choose the number of dice you want to roll
+            </p>
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              0.1 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~dice-roll, ~rolldice
+            </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 joke </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~joke </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Prints a joke </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~gibfunny, ~tellajoke
+            </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 pokemon </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~pokemon </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> In development </i>
+           </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 rateme </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~rateme </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Will rate the user </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~rate
+            </p>
           </div>
         </div>
         <div class="commands fun_commands">
-          <span class="show">
-            <span> &#8680 s </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~stock </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays subcommands for the stock command </i>
+            <p> 
+              <span class="highlight">
+                ~buy [portfolio number] [ticker] [amount (usd)]
+              </span>
+              - Use a subcommand to buy, sell and check your portfolio
+            </p>
+            <p> 
+              <span class="highlight">
+                subcommands:
+              </span>
+              buy, sell, price, watchlist, portfolio
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              2 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~stocks, ~s
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 imdb </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~imdb [movie name]</div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays the imdb results of the movie </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~imbd
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 lyrics </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~lyrics [song name] </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Prints the song lysics from Genius </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~lyric, ~song, ~songDetails
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 matty </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~matty </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays a picture of Matty </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~whoismatty
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 movies </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~movies </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays subcommands for movie command </i>
+            <p> 
+              <span class="highlight">
+                ~list
+              </span>
+              - Use a subcommand to print 10 random movies or add/remove movie to database
+            </p>
+            <p> 
+              <span class="highlight">
+                subcommands:
+              </span>
+              list, add, remove, check, show
+            </p>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              0.,2 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~movie
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 onceamatador </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~onceamatador </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Always a Matador! </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+             No Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~oam
+            </p>
           </div>
         </div>
         <div class="commands misc_commands" >
-          <span class="show">
-            <span> &#8680 reddit </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~reddit [subreddit/category] [is this a subreddit] </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Displays an image from the subreddit or category </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~red, ~redit
+            </p>
           </div>
         </div>
         <div class="commands misc_commands">
-          <span class="show">
-            <span> &#8680 say </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~say [anything]</div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Repeats anything you say </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              No &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~repeat
+            </p>
           </div>
         </div>
         <div class="commands misc_commands" >
-          <span class="show">
-            <span> &#8680 suggestions </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~suggestions [suggestion]</div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Sends a suggestion to the mod team </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              0.1 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~suggest, ~please, ~suggestion, ~complaint, ~complain
+            </p>
           </div>
         </div>
         <div class="commands utility_commands" >
-          <span class="show">
-            <span> &#8680 ban </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~ban [@user] [reason] </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Bans someone from the server </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              10 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~remove, ~delete
+            </p>
           </div>
         </div>
         <div class="commands utility_commands">
-          <span class="show">
-            <span> &#8680 kick </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~kick [@user] [reason] </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Kicks someone from the server </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              5 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~boot
+            </p>
           </div>
         </div>
         <div class="commands utility_commands">
-          <span class="show">
-            <span> &#8680 prune </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~prune [number of messages]</div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Deletes 2-100 messages from the channel </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              10 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~deletemessages, deletemessage, prunemessage
+            </p>
           </div>
         </div>
         <div class="commands utility_commands">
-          <span class="show">
-            <span> &#8680 reload </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~reload [command name] </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Reload a a command file, helpful for testing </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              10 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~restart, ~reboot, ~reset
+            </p>
           </div>
         </div>
         <div class="commands utility_commands" >
-          <span class="show">
-            <span> &#8680 reload-bot </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~reload-bot </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Restarts the bot if using PM2, else ends the node process </i>
+            <p> 
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              10 Seconds &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~reset-bot, restart-bot, reboot-bot
+            </p>
           </div>
         </div>
         <div class="commands utility_commands" id = "lastCommand">
-          <span class="show">
-            <span> &#8680 updaterole </span>
-          </span>
+          <div class="show">
+            <div> &#8680 ~updaterole </div>
+          </div>
           <div class="info">
-            <i> Details shown here </i>
+            <i> Updates the user's school year role </i>
+            <p>
+              <span class="highlight">
+                Server Only: 
+              </span>
+              Yes &emsp;
+              <span class="highlight">
+                Cooldown: 
+              </span>
+              18 days &emsp;
+              <span class="highlight">
+                Aliases: 
+              </span>
+              ~updateyear, ~updateme
+            </p>
           </div>
         </div>
         <br>
         <div id = "lastCommand"></div>
       </section>
     </div>
-
-    
-
-    <!-- Scripts -->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.poptrox.min.js"></script>
-    <script src="../assets/js/browser.min.js"></script>
-    <script src="../assets/js/breakpoints.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
   </body>
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.poptrox.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
 </html>
